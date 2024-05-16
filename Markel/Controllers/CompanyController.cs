@@ -14,23 +14,30 @@ namespace Markel.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<GetCompanyResponse>> GetCompany(int id)
         {
-            var company = await _companyService.GetCompanyAsync(id);
-            if (company == null)
+            try
             {
-                return NotFound();
-            }
+                var company = await _companyService.GetCompanyAsync(id);
 
-            return Ok(company);
+                if (company == null)
+                {
+                    return NotFound("Company not found");
+                }
+
+                return Ok(company);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         // claims for company
         [HttpGet("{id}/claims")]
-        public ActionResult GetCompanyClaims(int id)
+        public async Task<ActionResult> GetCompanyClaims(int id)
         {
-
-            throw new NotImplementedException();
+            var claims = await _companyService.GetCompanyClaimsAsync(id);
+            return Ok(claims);
         }
-
 
         // claim details
 
