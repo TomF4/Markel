@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Markel")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dd190246e9dafe1768a798d4ee23c0dfb184b0a6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+549499ee8e4493b5de9ed3bd042f3369d3aa340b")]
 [assembly: System.Reflection.AssemblyProductAttribute("Markel")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Markel")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

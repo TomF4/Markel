@@ -6,9 +6,11 @@ namespace Markel.Models
         public required string Name { get; set; }
         public required string Address1 { get; set; }
         public required string Address2 { get; set; }
+        public required string Address3 { get; set; }
         public required string Postcode { get; set; }
         public required string Country { get; set; }
         public bool Active { get; set; }
         public DateTime InsuranceEndDate { get; set; }
+        public bool HasActiveInsurance { get; set; }
     }
 }

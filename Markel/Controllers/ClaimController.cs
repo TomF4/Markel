@@ -15,5 +15,12 @@ namespace Markel.Controllers
         {
             throw new NotImplementedException();
         }
+
+        [HttpPut("{ucr}")]
+        public ActionResult UpdateClaim(string ucr)
+        {
+
+            throw new NotImplementedException();
+        }
     }
 }

@@ -10,7 +10,7 @@ namespace Markel.Models.Domain
         public required string Postcode { get; set; }
         public required string Country { get; set; }
         public bool Active { get; set; }
-        public DateTime InsureanceEndDate { get; set; }
+        public DateTime InsuranceEndDate { get; set; }
         public ICollection<Claim>? Claims { get; set;}
     }
 }
