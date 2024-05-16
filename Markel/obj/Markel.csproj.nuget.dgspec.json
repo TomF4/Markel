@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Thoma\\Documents\\Projects\\Markel\\Markel\\Markel.csproj": {}
+    "c:\\Users\\Thoma\\Documents\\Projects\\Markel\\Markel\\Markel.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Thoma\\Documents\\Projects\\Markel\\Markel\\Markel.csproj": {
+    "c:\\Users\\Thoma\\Documents\\Projects\\Markel\\Markel\\Markel.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Thoma\\Documents\\Projects\\Markel\\Markel\\Markel.csproj",
+        "projectUniqueName": "c:\\Users\\Thoma\\Documents\\Projects\\Markel\\Markel\\Markel.csproj",
         "projectName": "Markel",
-        "projectPath": "C:\\Users\\Thoma\\Documents\\Projects\\Markel\\Markel\\Markel.csproj",
+        "projectPath": "c:\\Users\\Thoma\\Documents\\Projects\\Markel\\Markel\\Markel.csproj",
         "packagesPath": "C:\\Users\\Thoma\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Thoma\\Documents\\Projects\\Markel\\Markel\\obj\\",
+        "outputPath": "c:\\Users\\Thoma\\Documents\\Projects\\Markel\\Markel\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -39,6 +39,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {

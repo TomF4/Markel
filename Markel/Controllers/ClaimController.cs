@@ -1,5 +1,6 @@
 
 using Markel.Models;
+using Markel.Models.Domain;
 using Markel.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -11,16 +12,31 @@ namespace Markel.Controllers
     {
         private readonly ClaimService _claimService = ClaimService ?? throw new NullReferenceException($"Claim Service is null: {typeof(ClaimService)}");
 
-        public ActionResult GetClaim()
+
+        [HttpGet("{ucr}")]
+        public async Task<IActionResult> GetClaim(string ucr)
         {
-            throw new NotImplementedException();
+            var claim = await _claimService.GetClaimAsync(ucr);
+            if (claim == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(claim);
         }
 
         [HttpPut("{ucr}")]
-        public ActionResult UpdateClaim(string ucr)
+        public async Task<IActionResult> UpdateClaim(string ucr, [FromBody] Claim updatedClaim)
         {
-
-            throw new NotImplementedException();
+            try
+            {
+                await _claimService.UpdateClaimAsync(ucr, updatedClaim);
+                return Ok(new { message = "Claim updated successfully" });
+            }
+            catch (ArgumentException)
+            {
+                return NotFound();
+            }
         }
     }
 }

@@ -40,8 +40,8 @@ namespace Markel.Services
             var claims = await _dbContext.Claims
                 .Where(c => c.CompanyId == companyId)
                 .ToListAsync();
-            
-            return claims.Select(x => new GetCompanyClaims() 
+
+            return claims.Select(x => new GetCompanyClaims()
             {
                 UCR = x.UCR,
                 AssuredName = x.AssuredName,

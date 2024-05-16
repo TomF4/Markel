@@ -35,11 +35,15 @@ namespace Markel.Controllers
         [HttpGet("{id}/claims")]
         public async Task<ActionResult> GetCompanyClaims(int id)
         {
-            var claims = await _companyService.GetCompanyClaimsAsync(id);
-            return Ok(claims);
+            try
+            {
+                var claims = await _companyService.GetCompanyClaimsAsync(id);
+                return Ok(claims);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
-
-        // claim details
-
     }
 }

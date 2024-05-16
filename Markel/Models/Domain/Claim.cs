@@ -1,5 +1,3 @@
-using Markel.Controllers;
-
 namespace Markel.Models.Domain
 {
     public class Claim
@@ -11,6 +9,6 @@ namespace Markel.Models.Domain
         public required string AssuredName { get; set; }
         public decimal IncurredLoss { get; set; }
         public bool Closed { get; set; }
-        public Company Company { get; set; }
+        public Company? Company { get; set; }
     }
 }
