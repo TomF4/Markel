@@ -1,4 +1,4 @@
-using Markel.Models;
+using Markel.Models.Response;
 using Markel.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -12,18 +12,18 @@ namespace Markel.Controllers
 
         // single company
         [HttpGet("{id}")]
-        public async Task<ActionResult<GetCompanyResponse>> GetCompany(int id)
+        public async Task<ActionResult<GetCompanyResponse?>> GetCompany(int id)
         {
             try
             {
-                var company = await _companyService.GetCompanyAsync(id);
+                var companyResponse = await _companyService.GetCompanyAsync(id);
 
-                if (company == null)
+                if (companyResponse == null)
                 {
                     return NotFound("Company not found");
                 }
 
-                return Ok(company);
+                return Ok(companyResponse);
             }
             catch (Exception ex)
             {

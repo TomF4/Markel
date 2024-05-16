@@ -1,12 +1,10 @@
-using System.Reflection.Metadata.Ecma335;
-using Markel.Models;
 using Markel.Models.Domain;
 using Markel.Models.Response;
 using Microsoft.EntityFrameworkCore;
 
 namespace Markel.Services
 {
-    public class ClaimService(MarkelDbContext context)
+    public class ClaimService(MarkelDbContext context) : IClaimService
     {
         private readonly MarkelDbContext _dbContext = context;
 

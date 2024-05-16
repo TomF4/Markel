@@ -1,4 +1,4 @@
-namespace Markel.Models
+namespace Markel.Models.Response
 {
     public class GetCompanyResponse
     {

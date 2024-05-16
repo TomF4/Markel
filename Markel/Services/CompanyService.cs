@@ -1,9 +1,10 @@
-using Markel.Models;
+using Markel.Models.Domain;
+using Markel.Models.Response;
 using Microsoft.EntityFrameworkCore;
 
 namespace Markel.Services
 {
-    public class CompanyService(MarkelDbContext context)
+    public class CompanyService(MarkelDbContext context) : ICompanyService
     {
         private readonly MarkelDbContext _dbContext = context;
 
