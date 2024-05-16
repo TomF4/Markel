@@ -1,4 +1,3 @@
-
 using Markel.Models;
 using Markel.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -7,17 +6,21 @@ namespace Markel.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CompanyController(CompanyService companyService)
+    public class CompanyController(CompanyService companyService) : ControllerBase
     {
         private readonly CompanyService _companyService = companyService ?? throw new NullReferenceException($"Company Service is null: {typeof(CompanyService)}");
 
         // single company
         [HttpGet("{id}")]
-        public ActionResult<GetCompanyResponse> GetCompany(int id)
+        public async Task<ActionResult<GetCompanyResponse>> GetCompany(int id)
         {
-            
+            var company = await _companyService.GetCompanyAsync(id);
+            if (company == null)
+            {
+                return NotFound();
+            }
 
-            throw new NotImplementedException();
+            return Ok(company);
         }
 
         // claims for company

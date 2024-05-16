@@ -7,7 +7,7 @@ namespace Markel.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ClaimController(ClaimService ClaimService)
+    public class ClaimController(ClaimService ClaimService) : ControllerBase
     {
         private readonly ClaimService _claimService = ClaimService ?? throw new NullReferenceException($"Claim Service is null: {typeof(ClaimService)}");
 
