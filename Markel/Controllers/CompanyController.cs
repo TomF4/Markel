@@ -9,7 +9,7 @@ namespace Markel.Controllers
     [ApiController]
     public class CompanyController(CompanyService companyService)
     {
-        private readonly CompanyService _companyService = companyService;
+        private readonly CompanyService _companyService = companyService ?? throw new NullReferenceException($"Company Service is null: {typeof(CompanyService)}");
 
         // single company
         [HttpGet("{id}")]

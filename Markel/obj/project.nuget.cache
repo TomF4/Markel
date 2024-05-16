@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "FLzo5CroY9MMSfEkktckZEG37A5Z7vccps8de3KKbi9H3PlgcGyPL1H4sTfNk0vgIyMSgDRXYokbcJ+tuzLezw==",
+  "dgSpecHash": "bndfps4khwuEum5Fu4mDWD0wHtY2r83NPi5Xtf2IcyQ5o2bR492Sw7MH7foUjuQNfTdvkln8G79GsgzbI6wmbQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Thoma\\Documents\\Projects\\Markel\\Markel\\Markel.csproj",
   "expectedPackageFiles": [
@@ -21,6 +21,7 @@
     "C:\\Users\\Thoma\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\8.0.5\\microsoft.entityframeworkcore.abstractions.8.0.5.nupkg.sha512",
     "C:\\Users\\Thoma\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\8.0.5\\microsoft.entityframeworkcore.analyzers.8.0.5.nupkg.sha512",
     "C:\\Users\\Thoma\\.nuget\\packages\\microsoft.entityframeworkcore.design\\8.0.5\\microsoft.entityframeworkcore.design.8.0.5.nupkg.sha512",
+    "C:\\Users\\Thoma\\.nuget\\packages\\microsoft.entityframeworkcore.inmemory\\8.0.5\\microsoft.entityframeworkcore.inmemory.8.0.5.nupkg.sha512",
     "C:\\Users\\Thoma\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\8.0.5\\microsoft.entityframeworkcore.relational.8.0.5.nupkg.sha512",
     "C:\\Users\\Thoma\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\8.0.5\\microsoft.entityframeworkcore.sqlserver.8.0.5.nupkg.sha512",
     "C:\\Users\\Thoma\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\8.0.5\\microsoft.entityframeworkcore.tools.8.0.5.nupkg.sha512",

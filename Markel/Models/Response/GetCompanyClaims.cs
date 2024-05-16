@@ -6,7 +6,7 @@ namespace Markel.Models
         public DateTime ClaimDate {get;set;}    
         public DateTime LossDate {get;set;}
         public required string AssuredName {get;set;}
-        public Decimal IncurredLoss {get;set;}
+        public decimal IncurredLoss {get;set;}
         public bool Closed {get;set;}
     }
 }

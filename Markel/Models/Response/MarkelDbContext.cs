@@ -12,18 +12,6 @@ namespace Markel.Models
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-
-            // modelBuilder.Entity<Claim>()
-            //     .Property(c => c.Closed)
-            //     .HasColumnType("bit");
-
-            // modelBuilder.Entity<Claim>()
-            //     .Property(c => c.IncurredLoss)
-            //     .HasColumnType("decimal(15,2)");
-
-            // modelBuilder.Entity<Company>()
-            //     .Property(c => c.Active)
-            //     .HasColumnType("bit");
         }
     }
 }
