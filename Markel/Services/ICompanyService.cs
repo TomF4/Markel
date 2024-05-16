@@ -1,4 +1,3 @@
-using Markel.Models;
 using Markel.Models.Response;
 
 namespace Markel.Services

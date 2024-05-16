@@ -1,6 +1,5 @@
 
-using Markel.Models;
-using Markel.Models.Domain;
+using Markel.Models.Requests;
 using Markel.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,11 +7,14 @@ namespace Markel.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ClaimController(ClaimService ClaimService) : ControllerBase
+    public class ClaimController(IClaimService ClaimService) : ControllerBase
     {
-        private readonly ClaimService _claimService = ClaimService ?? throw new NullReferenceException($"Claim Service is null: {typeof(ClaimService)}");
+        private readonly IClaimService _claimService = ClaimService ?? throw new NullReferenceException($"Claim Service is null: {typeof(IClaimService)}");
 
-
+        /// <summary>
+        /// Get a claims details
+        /// </summary>
+        /// <param name="ucr"></param>
         [HttpGet("{ucr}")]
         public async Task<IActionResult> GetClaim(string ucr)
         {
@@ -25,8 +27,13 @@ namespace Markel.Controllers
             return Ok(claim);
         }
 
+        /// <summary>
+        /// Update a claim from body
+        /// </summary>
+        /// <param name="ucr"></param>
+        /// <param name="updatedClaim"></param>
         [HttpPut("{ucr}")]
-        public async Task<IActionResult> UpdateClaim(string ucr, [FromBody] Claim updatedClaim)
+        public async Task<IActionResult> UpdateClaim(string ucr, [FromBody] UpdateClaimsRequest updatedClaim)
         {
             try
             {

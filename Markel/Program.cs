@@ -1,10 +1,12 @@
 using Markel.Models.Domain;
 using Markel.Services;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<MarkelDbContext>(options => options.UseInMemoryDatabase("TestDatabase"));
+
 builder.Services.AddScoped<ICompanyService, CompanyService>();
 builder.Services.AddScoped<IClaimService, ClaimService>();
 
@@ -22,7 +24,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI(c => 
     {
-        c.SwaggerEndpoint("/swagger/v1/swagger.json", "Markel API v1");
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "Markel API");
     });
 }
 
@@ -31,6 +33,7 @@ app.UseAuthorization();
 app.MapControllers();
 app.Run();
 
+// random test data for endpoint testing
 static void Data(MarkelDbContext dbContext)
 {
     dbContext.Companies.AddRange(
@@ -75,6 +78,16 @@ static void Data(MarkelDbContext dbContext)
         {
             UCR = "UCR2",
             CompanyId = 2,
+            ClaimDate = DateTime.UtcNow.AddDays(-20),
+            LossDate = DateTime.UtcNow.AddDays(-25),
+            AssuredName = "NAME2",
+            IncurredLoss = 2000,
+            Closed = false
+        },
+        new Claim
+        {
+            UCR = "UCR3",
+            CompanyId = 1,
             ClaimDate = DateTime.UtcNow.AddDays(-20),
             LossDate = DateTime.UtcNow.AddDays(-25),
             AssuredName = "NAME2",

@@ -1,4 +1,5 @@
 using Markel.Models.Domain;
+using Markel.Models.Requests;
 using Markel.Models.Response;
 using Microsoft.EntityFrameworkCore;
 
@@ -32,7 +33,7 @@ namespace Markel.Services
             };
         }
 
-        public async Task UpdateClaimAsync(string ucr, Claim updatedClaim)
+        public async Task UpdateClaimAsync(string ucr, UpdateClaimsRequest updatedClaim)
         {
             var claim = await _dbContext.Claims.FirstOrDefaultAsync(c => c.UCR == ucr) ?? throw new ArgumentException("Claim not found");
 

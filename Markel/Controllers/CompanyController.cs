@@ -6,11 +6,15 @@ namespace Markel.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CompanyController(CompanyService companyService) : ControllerBase
+    public class CompanyController(ICompanyService companyService) : ControllerBase
     {
-        private readonly CompanyService _companyService = companyService ?? throw new NullReferenceException($"Company Service is null: {typeof(CompanyService)}");
+        private readonly ICompanyService _companyService = companyService ?? throw new NullReferenceException($"Company Service is null: {typeof(ICompanyService)}");
 
-        // single company
+        /// <summary>
+        /// Get specific comapany
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns> <see cref="GetCompanyResponse"/> </returns>
         [HttpGet("{id}")]
         public async Task<ActionResult<GetCompanyResponse?>> GetCompany(int id)
         {
@@ -31,7 +35,11 @@ namespace Markel.Controllers
             }
         }
 
-        // claims for company
+        /// <summary>
+        /// Get all claims for specified company
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet("{id}/claims")]
         public async Task<ActionResult> GetCompanyClaims(int id)
         {
